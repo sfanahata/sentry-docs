@@ -82,4 +82,4 @@ Here are some ways that I would validate the value and usability of our docs. We
 
 ## Contact
 **Me!** Shannon Anahata
-**E** shannon.anahata@gmail.com
+**Email** shannon.anahata@gmail.com

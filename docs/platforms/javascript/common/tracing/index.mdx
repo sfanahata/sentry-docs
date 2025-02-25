@@ -28,9 +28,8 @@ With [tracing](/product/tracing/), Sentry tracks your software performance, meas
 If you are ready to dive in, follow these steps:
 
 1. **Enable and configure** the sample rate for your transactions by creating a uniform sample rate for all transactions. Set the `traces-sample-rate` option in your SDK config to a number between `0` and `1`. (For example, to send 20% of transactions, set <PlatformIdentifier name="traces-sample-rate" /> to `0.2`.)
-<PlatformContent includePath="performance/configure-sample-rate" />
-
-2. **Test** by setting the <PlatformIdentifier name="traces-sample-rate" /> to `1.0`, as that ensures that every transaction will be sent to Sentry.
+<PlatformContent includePath="performance/configure-sample-rate" /> <br>
+2. **Test** by setting the <PlatformIdentifier name="traces-sample-rate" /> to `1.0`, as that ensures that every transaction will be sent to Sentry. <br>
 2a. **Verify** that tracing is working correctly by using our <PlatformLink to="/tracing/instrumentation/automatic-instrumentation/">automatic instrumentation</PlatformLink> or by starting and finishing a transaction using <PlatformLink to="/tracing/instrumentation/custom-instrumentation/">custom instrumentation</PlatformLink>.
 
 <Alert> Once verified, switch to  <PlatformIdentifier name="traces-sampler" /> for condition-based sampling, or lower your transaction percentage for <PlatformIdentifier name="traces-sample-rate" /> to avoid being charged for more transactions than desired.
@@ -39,11 +38,12 @@ If you are ready to dive in, follow these steps:
 ## Configuration options
 
 <PlatformSection notSupported={["javascript"]}>
-  Sampling rate configurations have two options:
+  Once you have completed set-up, sampling rate configurations have two options:
 </PlatformSection>
 
-- Set a uniform sample rate for all transactions using the <PlatformIdentifier name="traces-sample-rate" /> option in your SDK config to a number between `0` and `1`. (For example, to send 20% of transactions, set <PlatformIdentifier name="traces-sample-rate" /> to `0.2`.)
-- Control the sample rate based on the transaction itself and the context in which it's captured, by providing a function to the <PlatformIdentifier name="traces-sampler" /> config option.
+1. Set a uniform sample rate for all transactions using the <PlatformIdentifier name="traces-sample-rate" /> option in your SDK config to a number between `0` and `1`. (For example, to send 20% of transactions, set <PlatformIdentifier name="traces-sample-rate" /> to `0.2`.)
+<br>
+2. Control the sample rate based on the transaction itself and the context in which it's captured, by providing a function to the <PlatformIdentifier name="traces-sampler" /> config option.
 
 <Alert>The two options are meant to be mutually exclusive. If you set both, <PlatformIdentifier name="traces-sampler" /> will take precedence.
 </Alert>
